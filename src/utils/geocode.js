@@ -8,8 +8,6 @@ const geocode = (address, callback) => {
     const encodedAddress = encodeURIComponent(address)
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?access_token=${mapboxApiKey}`
 
-    console.log(url)
-
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to contact location services', undefined)
